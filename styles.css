@@ -11,8 +11,13 @@
 
 #catagories-container h5{
      color: rgba(0, 0, 0, 0.676);
+     cursor: context-menu;
 }
 .found-news-amount h3{
+     background-color: white;
+}
+
+#copyright-text{
      background-color: white;
 }
 
