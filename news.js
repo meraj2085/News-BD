@@ -36,18 +36,25 @@ const displayNews = (newses) =>{
           const {author, thumbnail_url, image_url, details, title} = news;
 
           console.log(news)
-          const cardCol = document.createElement('div');
-          cardCol.classList.add('col');
-          cardCol.innerHTML = `
-          <div class="card h-100">
-          <img src="${image_url}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">${title}</h5>
-            <p class="card-text">${details.length > 100 ? details.slice(0,100) + '...' : details}</p>
+          const cardDiv = document.createElement('div');
+          cardDiv.classList.add('col');
+          cardDiv.innerHTML = `
+          <div class="card mb-3" style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="${thumbnail_url}" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">${title}</h5>
+                <p style="color: #000000dd;" class="card-text">${details.length > 200 ? details.slice(0,200) + '...' : details}</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
           </div>
           </div>
           `
-          newsContainer.appendChild(cardCol);
+          newsContainer.appendChild(cardDiv)
      });
 }
 
