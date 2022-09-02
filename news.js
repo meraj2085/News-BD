@@ -33,7 +33,8 @@ const loadNews = async () =>{
 const displayNews = (newses) =>{
      const newsContainer = document.getElementById('news-card-container');
      newses.forEach(news => {
-          const {author, thumbnail_url, image_url, details, title} = news;
+          const {author,rating, thumbnail_url, image_url, details, title} = news;
+          const {name, img, published_date} = author;
 
           console.log(news)
           const cardDiv = document.createElement('div');
@@ -48,7 +49,21 @@ const displayNews = (newses) =>{
               <div class="card-body">
                 <h5 class="card-title">${title}</h5>
                 <p style="color: #000000dd;" class="card-text">${details.length > 200 ? details.slice(0,200) + '...' : details}</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex">
+                         <div class="me-2" style="width: 30px;">
+                         <img class="img-fluid rounded-circle" src="${img}" alt="">
+                         </div>
+                         <p class="mb-0">${name}</p>
+                    </div>
+                    <div class="fs-5 d-flex">
+               <p class="me-2"><i class="fa-sharp fa-solid fa-eye"></i></p>
+              <p>${rating.number}</p>
+               </div>
+               <div>
+              <i style="color: #5D5FEF; font-size: 25px; margin-top: 3px;" class="fa-solid fa-arrow-right"></i>
+               </div>
+               </div>
               </div>
             </div>
           </div>
