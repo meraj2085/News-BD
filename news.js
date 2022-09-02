@@ -11,7 +11,12 @@ const loadCatagories = async () =>{
 }
 
 const displayData = (catagories) =>{
-     console.log(catagories)
+     const catagoriesContainer = document.getElementById('catagories-container');
+     catagories.forEach(category => {
+          const categoryList = document.createElement('h5');
+          categoryList.innerHTML = `${category.category_name}`
+          catagoriesContainer.appendChild(categoryList)
+     });
 }
 
 loadCatagories()
