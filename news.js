@@ -114,7 +114,6 @@ const loadDetails = async(news_id) =>{
 
 const displayDetails = (newsDetails)=>{
      const {image_url, details, title, total_view} = newsDetails;
-     console.log(newsDetails)
      const modalBody = document.getElementById('modal-body-card');
      modalBody.innerHTML = `
      <div class="card">
