@@ -34,9 +34,17 @@ const loadNews = async (id) =>{
 
 const displayNews = (newses) =>{
      const resultContainer = document.getElementById('result-numbers');
-     resultContainer.innerHTML = `
+     console.log(newses.length)
+     if(newses.length > 0){
+          resultContainer.innerHTML = `
           <h5>${newses.length} items found for this category.</h5>
           `
+     }
+     else{
+          resultContainer.innerHTML = `
+          <h5>Sorry no news found</h5>
+          `
+     }
 
           const newsContainer = document.getElementById('news-card-container');
           newsContainer.textContent = '';
@@ -62,7 +70,7 @@ const displayNews = (newses) =>{
                 <div class="me-2" style="width: 30px;">
                 <img class="img-fluid rounded-circle" src="${img}" alt="">
                          </div>
-                         <p class="mb-0">${name}</p>
+                         <p class="mb-0">${name ? name : 'No data available'}</p>
                          </div>
                          <div class="fs-5 d-flex">
                <p class="me-2"><i class="fa-sharp fa-solid fa-eye"></i></p>
