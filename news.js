@@ -64,24 +64,24 @@ const displayNews = (newses) =>{
             <div class="col-md-8">
               <div class="card-body">
                 <h5 class="card-title">${title}</h5>
-                <p style="color: #000000dd;" class="card-text">${details.length > 200 ? details.slice(0,200) + '...' : details}</p>
-                <div class="d-flex justify-content-between">
+                <p style="color: #000000dd;" class="card-text">${details.length > 150 ? details.slice(0,150) + '...' : details}</p>
+                <div class="d-flex justify-content-between mt-4">
                 <div class="d-flex">
                 <div class="me-2" style="width: 30px;">
                 <img class="img-fluid rounded-circle" src="${img}" alt="">
                          </div>
                          <p class="mb-0">${name ? name : 'No data available'}</p>
                          </div>
-                         <div class="fs-5 d-flex">
+               <div class="fs-6 d-flex">
                <p class="me-2"><i class="fa-sharp fa-solid fa-eye"></i></p>
-               <p>${rating.number}</p>
+               <p>${rating.number ? rating.number : 'No data'}M</p>
                </div>
                <div>
-               <i style="color: #5D5FEF; font-size: 25px; margin-top: 3px;" class="fa-solid fa-arrow-right"></i>
+               <i style="color: #5D5FEF; font-size: 25px; " class="fa-solid fa-arrow-right"></i>
                </div>
                </div>
                </div>
-            </div>
+            </div> 
             </div>
             </div>
             `
