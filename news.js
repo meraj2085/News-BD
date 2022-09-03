@@ -55,7 +55,7 @@ const displayNews = (newses) =>{
                const cardDiv = document.createElement('div');
                cardDiv.classList.add('col');
                cardDiv.innerHTML = `
-               <div class="card mb-3" style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
+               <div data-bs-toggle="modal" data-bs-target="#newsModal" onclick="loadDetails('${news._id}')" class="card mb-3" style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
                <div class="row g-0">
                <div class="col-md-4">
                <img src="${thumbnail_url}" class="img-fluid rounded-start" alt="...">
@@ -122,7 +122,7 @@ const displayDetails = (newsDetails)=>{
        <h5 class="card-title">${title}</h5>
        <p class="card-text">Views : ${total_view}</p>
        <p class="card-text">${details}</p>
-     </div>
-     </div>
-     `
+       </div>
+       </div>
+       `
 }
