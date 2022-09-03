@@ -60,7 +60,8 @@ const displayNews = (newses) =>{
                <div data-bs-toggle="modal" data-bs-target="#newsModal" onclick="loadDetails('${news._id}')" class="card mb-3" style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
                <div class="row g-0">
                <div class="col-md-4">
-               <img src="${thumbnail_url}" class="img-fluid rounded-start" alt="...">
+               <img id="lg-screes" src="${thumbnail_url}" class="img-fluid rounded-start" alt="...">
+               <img id="md-screen" src="${image_url}" class="img-fluid rounded-start" alt="...">
             </div>
             <div class="col-md-8">
               <div class="card-body">

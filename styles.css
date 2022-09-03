@@ -21,8 +21,11 @@
      background-color: white;
 }
 
+#md-screen{
+     display: none;
+}
 
-@media only screen and (max-width:576px){
+@media only screen and (max-width:768px){
      #catagories-container{
           flex-direction: column;
           background-color: #5D5FEF;
@@ -35,5 +38,11 @@
           color: #5D5FEF;
           padding: 10px;
           border-radius: 10px;
+     }
+     #lg-screes{
+          display: none;
+     }
+     #md-screen{
+          display: block;
      }
 }
