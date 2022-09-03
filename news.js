@@ -76,7 +76,7 @@ const displayNews = (newses) =>{
                <p>${rating.number ? rating.number : 'No data'}M</p>
                </div>
                <div>
-               <i onclick="loadDetails('${news._id}')" style="color: #5D5FEF; font-size: 25px; " class="fa-solid fa-arrow-right"></i>
+               <i onclick="loadDetails('${news._id}')" style="color: #5D5FEF; font-size: 25px; " class="fa-solid fa-arrow-right" data-bs-toggle="modal" data-bs-target="#newsModal"></i>
                </div>
                </div>
                </div>
@@ -109,5 +109,21 @@ const loadDetails = async(news_id) =>{
      const url = `https://openapi.programming-hero.com/api/news/${news_id}`
      const res = await fetch(url);
      const data = await res.json();
-     console.log(data.data[0])
+     displayDetails(data.data[0])
+}
+
+const displayDetails = (newsDetails)=>{
+     const {image_url, details, title, total_view} = newsDetails;
+     console.log(newsDetails)
+     const modalBody = document.getElementById('modal-body-card');
+     modalBody.innerHTML = `
+     <div class="card">
+     <img src="${image_url}" class="card-img-top" alt="...">
+     <div class="card-body">
+       <h5 class="card-title">${title}</h5>
+       <p class="card-text">Views : ${total_view}</p>
+       <p class="card-text">${details}</p>
+     </div>
+     </div>
+     `
 }
