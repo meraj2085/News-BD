@@ -51,8 +51,6 @@ const displayNews = (newses) =>{
           newses.sort((a, b) => b.total_view - a.total_view)
           
           newses.forEach(news => {
-               console.log(news);
-
                const {author,rating, thumbnail_url, image_url, details, title, total_view} = news;
                const {name, img, published_date} = author;
 
