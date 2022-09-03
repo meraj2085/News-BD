@@ -34,7 +34,6 @@ const loadNews = async (id) =>{
 
 const displayNews = (newses) =>{
      const resultContainer = document.getElementById('result-numbers');
-     console.log(newses.length)
      if(newses.length > 0){
           resultContainer.innerHTML = `
           <h5>${newses.length} items found for this category.</h5>
@@ -77,7 +76,7 @@ const displayNews = (newses) =>{
                <p>${rating.number ? rating.number : 'No data'}M</p>
                </div>
                <div>
-               <i style="color: #5D5FEF; font-size: 25px; " class="fa-solid fa-arrow-right"></i>
+               <i onclick="loadDetails('${news._id}')" style="color: #5D5FEF; font-size: 25px; " class="fa-solid fa-arrow-right"></i>
                </div>
                </div>
                </div>
@@ -106,3 +105,9 @@ const spinner = (isLoading) =>{
 
 //========================================//======================================//
 
+const loadDetails = async(news_id) =>{
+     const url = `https://openapi.programming-hero.com/api/news/${news_id}`
+     const res = await fetch(url);
+     const data = await res.json();
+     console.log(data.data[0])
+}
