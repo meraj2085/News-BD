@@ -13,8 +13,10 @@ const loadCatagories = async () =>{
 const displayData = (catagories) =>{
      const catagoriesContainer = document.getElementById('catagories-container');
      catagories.forEach(category => {
-          const categoryList = document.createElement('h5');
-          categoryList.innerHTML = `${category.category_name}`
+          const categoryList = document.createElement('div');
+          categoryList.innerHTML = `
+               <h5 onclick="loadNews(${category.category_id})">${category.category_name}</h5>
+          `
           catagoriesContainer.appendChild(categoryList)
      });
 }
