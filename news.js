@@ -27,9 +27,14 @@ loadCatagories()
 
 const loadNews = async (id) =>{
      const url = `https://openapi.programming-hero.com/api/news/category/${id}`
-     const res = await fetch(url);
-     const data = await res.json();
-     displayNews(data.data)
+     try{
+          const res = await fetch(url);
+          const data = await res.json();
+          displayNews(data.data)
+     }
+     catch(error){
+          console.log(error);
+     }
 }
 
 const displayNews = (newses) =>{
@@ -110,9 +115,14 @@ const spinner = (isLoading) =>{
 
 const loadDetails = async(news_id) =>{
      const url = `https://openapi.programming-hero.com/api/news/${news_id}`
-     const res = await fetch(url);
-     const data = await res.json();
-     displayDetails(data.data[0])
+     try{
+          const res = await fetch(url);
+          const data = await res.json();
+          displayDetails(data.data[0])
+     }
+     catch(error){
+          console.log(error);
+     }
 }
 
 const displayDetails = (newsDetails)=>{
