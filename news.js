@@ -47,8 +47,12 @@ const displayNews = (newses) =>{
 
           const newsContainer = document.getElementById('news-card-container');
           newsContainer.textContent = '';
+
+          newses.sort((a, b) => b.total_view - a.total_view)
           
           newses.forEach(news => {
+               console.log(news);
+
                const {author,rating, thumbnail_url, image_url, details, title} = news;
                const {name, img, published_date} = author;
 
