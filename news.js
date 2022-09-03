@@ -124,7 +124,7 @@ const displayDetails = (newsDetails)=>{
      <img src="${image_url}" class="card-img-top" alt="...">
      <div class="card-body">
        <h5 class="card-title">${title}</h5>
-       <h6 class="card-text">Rating : ${rating.number}</h6>
+       <h6 class="card-text"><i class="fa-solid fa-star"></i> ${rating.number ? rating.number : 'No data found'}</h6>
        <p class="card-text">${details}</p>
        </div>
        </div>
